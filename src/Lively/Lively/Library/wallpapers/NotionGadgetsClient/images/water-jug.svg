@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   width="48px"
+   height="48px"
+   clip-rule="evenodd"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="icons8-water-jug.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="27.789474"
+       y="10.894737"
+       width="3.4210526"
+       height="4.4736842"
+       id="rect78" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19"
+     inkscape:cx="23.973684"
+     inkscape:cy="23.973684"
+     inkscape:window-width="1920"
+     inkscape:window-height="1094"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="path1"
+     d="M 2,1.25 C 1.740021,1.25 1.4983211,1.3844827 1.3613281,1.6054688 1.2243421,1.8264478 1.212132,2.1039515 1.328125,2.3359375 L 3.25,6.1777344 V 20 c 0,0.72893 0.2897225,1.429383 0.8046875,1.945312 C 4.5706525,22.460312 5.271049,22.75 6,22.75 h 11 c 0.72893,0 1.429383,-0.289687 1.945312,-0.804688 C 19.460313,21.429382 19.75,20.72893 19.75,20 V 5.75 H 20 c 0.332,0 0.649766,0.1312484 0.884766,0.3652344 C 21.118696,6.3502134 21.25,6.668021 21.25,7 v 7 c 0,0.414 0.336,0.75 0.75,0.75 0.414,0 0.75,-0.336 0.75,-0.75 V 7 C 22.75,6.271049 22.460313,5.5706525 21.945312,5.0546875 21.429382,4.5397225 20.72893,4.25 20,4.25 H 19.75 V 4 C 19.75,2.481105 18.51886,1.25 17,1.25 Z m 1.2148438,1.5 H 17 c 0.68993,0 1.25,0.560049 1.25,1.25 v 1 15 c 0,0.332 -0.131304,0.649766 -0.365234,0.884766 C 17.649766,21.118696 17.332,21.25 17,21.25 H 6 C 5.668021,21.25 5.3502134,21.118696 5.1152344,20.884766 4.8812484,20.649766 4.75,20.332 4.75,20 V 6 C 4.75,5.884007 4.723868,5.7680555 4.671875,5.6640625 Z M 7,5.75 C 6.586028,5.75 6.25,6.086028 6.25,6.5 6.25,6.913972 6.586028,7.25 7,7.25 H 9 C 9.413972,7.25 9.75,6.913972 9.75,6.5 9.75,6.086028 9.413972,5.75 9,5.75 Z m 0.1142578,3.7373047 c 0.019509,0.00819 0.039023,0.01637 0.058594,0.024414 0.00354,0.00145 0.0057,0.00328 0.00879,0.00488 -0.00162,-0.00586 -0.00328,-0.011713 -0.00488,-0.017578 -0.020834,-0.00397 -0.041635,-0.00821 -0.0625,-0.011719 z M 6.3359375,9.8457031 c 0.00578,0.01106 0.012525,0.021416 0.018555,0.032227 6.482e-4,-0.00429 0.00178,-0.00849 0.00293,-0.012695 -0.00151,-0.00428 -0.00323,-0.00848 -0.00488,-0.012695 h -9.766e-4 c -0.00554,-0.00207 -0.010533,-0.00446 -0.015625,-0.00684 z M 7,11.75 c -0.413972,0 -0.75,0.336 -0.75,0.75 0,0.414 0.336028,0.75 0.75,0.75 h 2 c 0.413972,0 0.75,-0.336 0.75,-0.75 0,-0.414 -0.336028,-0.75 -0.75,-0.75 z m 1.7519531,4.49707 c 0.00183,9.97e-4 0.00409,0.0019 0.00586,0.0029 h 0.06543 c -0.023773,-0.0011 -0.047519,-0.0018 -0.071289,-0.0029 z M 7,17.75 c -0.413972,0 -0.75,0.336 -0.75,0.75 0,0.414 0.336028,0.75 0.75,0.75 h 2 c 0.413972,0 0.75,-0.336 0.75,-0.75 0,-0.414 -0.336028,-0.75 -0.75,-0.75 z" />
+  <g
+     id="g76"
+     transform="matrix(0.70730198,0,0,0.70730198,3.500047,5.4064762)">
+    <ellipse
+       style="fill:#000000;stroke-width:8.26665"
+       id="path75"
+       cx="13.171631"
+       cy="18.547285"
+       rx="1.4834762"
+       ry="1.4247246" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23869px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.70664"
+       x="12.456212"
+       y="18.980564"
+       id="text75"><tspan
+         sodipodi:role="line"
+         id="tspan75"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23869px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.70664"
+         x="12.456212"
+         y="18.980564">1L</tspan></text>
+  </g>
+  <g
+     id="g77"
+     transform="matrix(0.57608623,0,0,0.57608623,5.1651969,5.3085755)">
+    <ellipse
+       style="fill:#000000;stroke-width:8.26665"
+       id="path75-4"
+       cx="13.233476"
+       cy="12.457621"
+       rx="1.4834762"
+       ry="1.4247246" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23869px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.70664"
+       x="12.518057"
+       y="12.8909"
+       id="text75-8"><tspan
+         sodipodi:role="line"
+         id="tspan75-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23869px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.70664"
+         x="12.518057"
+         y="12.8909">2L</tspan></text>
+  </g>
+  <g
+     id="g78"
+     transform="matrix(0.7591786,0,0,0.7591786,2.8616086,1.547719)">
+    <ellipse
+       style="fill:#000000;stroke-width:5.48041"
+       id="path75-4-6"
+       cx="13.194002"
+       cy="6.497159"
+       rx="0.98347616"
+       ry="0.94452655" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.821194px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.13142"
+       x="12.719713"
+       y="6.7844028"
+       id="text75-8-3"><tspan
+         sodipodi:role="line"
+         id="tspan75-4-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.821194px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.13142"
+         x="12.719713"
+         y="6.7844028">3L</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     transform="scale(0.5)"
+     id="text78"
+     style="fill:#ffffff;stroke-width:16.53333333;-inkscape-font-specification:'Arial Rounded MT Bold, Normal';font-family:'Arial Rounded MT Bold';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.5999999px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect78)" />
+</svg>

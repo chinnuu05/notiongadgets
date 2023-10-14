@@ -135,6 +135,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\NotionGadgetsServer\NotionGadgetsServer\NotionGadgetsServer.csproj" />
     <ProjectReference Include="..\Lively.Common\Lively.Common.csproj" />
     <ProjectReference Include="..\Lively.Grpc.Client\Lively.Grpc.Client.csproj" />
     <ProjectReference Include="..\Lively.ML\Lively.ML.csproj" />

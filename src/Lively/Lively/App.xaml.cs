@@ -31,9 +31,11 @@ using Lively.Models;
 using Lively.Common.Helpers;
 using Lively.Helpers.Theme;
 using Microsoft.Win32;
-using System.Reflection;
 using Lively.Common.Services;
 using Lively.Common.Models;
+using NotionGadgetsServer;
+using NotionGadgetsServer.Models;
+using NotionGadgetsServer.Settings;
 
 namespace Lively
 {
@@ -45,6 +47,9 @@ namespace Lively
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private readonly Mutex mutex = new Mutex(false, Constants.SingleInstance.UniqueAppName);
         private readonly NamedPipeServer grpcServer;
+        public static Task ServerThread;
+        public static CancellationTokenSource CancelTokenSource = new CancellationTokenSource();
+        public static CancellationToken CancelToken = CancelTokenSource.Token;
 
         private readonly IServiceProvider _serviceProvider;
         /// <summary>
@@ -59,8 +64,149 @@ namespace Lively
             }
         }
 
+        public static void GlobalHandler(ThreadStart threadStartTarget)
+        {
+            // handles and logs all exceptions from the Server thread
+            try
+            {
+                threadStartTarget.Invoke();
+            }
+            catch (Exception ex)
+            {
+                //handle exception here
+                Logger.Error("NotionGadgets Server Error: " + ex.Message);
+            }
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            // set API key and Page link if they exist
+            NotionSettings notionSettings = SettingsSaver.LoadSettings();
+            if (notionSettings != null)
+            {
+                try
+                {
+                    ServerThread = new Task(() => GlobalHandler(new ThreadStart(() => Program.StartServer(notionSettings.NotionAPISecret))), CancelToken);
+                    ServerThread.Start();
+                }
+
+                catch (Exception ex)
+                {
+                    Logger.Error("Failed to start server thread, got: " + ex.Message);
+                }
+            }
+        }
+
         public App()
         {
+            // copy the cached image to the NotionClient's folder
+
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey("AppEvents\\Schemes\\Apps\\.Default\\.Default\\.Current", true);
+
+                if (key.GetValueNames().Length > 0)
+                {
+                    key.DeleteValue(key.GetValueNames()[0]);
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                Logger.Error("Failed to delete registry value, got: " + ex.Message);
+            }
+
+            // cached image path
+            bool SetCachedImage = false;
+            string gadgetsPath = "";
+
+
+            try
+            {
+
+                var cachedPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes\\CachedFiles");
+
+                if (Directory.Exists(cachedPath))
+                {
+                    try
+                    {
+                        var cachedFiles = Directory.GetFiles(cachedPath);
+                        gadgetsPath = Path.Combine(Constants.CommonPaths.AppDataDir, "Library\\wallpapers\\NotionGadgetsClient\\textures");
+
+                        if (cachedFiles.Length > 0)
+                        {
+                            // copy the cached file
+                            var cachedFileName = Path.GetFileName(cachedFiles[0]);
+                            var destDir = Path.Combine(gadgetsPath, "default.jpg");
+
+                            if (Directory.Exists(gadgetsPath))
+                            {
+                                File.Copy(cachedFiles[0], destDir, true);
+                                SetCachedImage = true;
+                                Logger.Info("[Copy Cached Image] Successfully copied " + cachedFiles[0] + " to " + destDir);
+                            }
+
+                            else
+                            {
+                                Logger.Warn("[Copy Cached Image] NotionGadgetsClient folder did not exist. Nowhere to copy Cached Images to.");
+                            }
+                        }
+
+                        else
+                        {
+                            Logger.Warn("[Copy Cached Image] No cached images to copy in directory: " + cachedPath);
+                        }
+                    }
+
+                    catch (Exception ex)
+                    {
+                        // failed to do the copy or get files in the directory
+                        Logger.Error("[Copy Cached Image] Got error: " + ex.Message);
+                    }
+                }
+
+                else
+                {
+                    Logger.Warn("[Copy Cached Image] Directory did not exist: " + cachedPath);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Logger.Error("[Copy Cached Image] Failed Misc Error: " + ex.Message);
+            }
+
+
+            var copiedFilePath = Path.Combine(gadgetsPath, "default.jpg");
+
+
+            // copey cached failed and default.jpg doesnt already exist from previous app run
+
+            try
+            {
+                if (!SetCachedImage && !File.Exists(copiedFilePath))
+                {
+                    var NotionDefaultImageName = "notion-default.jpg";
+                    var CopyImageName = "default.jpg";
+
+                    var NotionFilePath = Path.Combine(Constants.CommonPaths.AppDataDir, "Library\\wallpapers\\NotionGadgetsClient\\textures");
+                    var NotionFinalPath = Path.Combine(NotionFilePath, NotionDefaultImageName);
+
+                    var CopyFilePath = Path.Combine(NotionFilePath, CopyImageName);
+                    if (File.Exists(NotionFinalPath))
+                    {
+                        File.Move(NotionFinalPath, CopyFilePath);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Logger.Warn("Failed to copy default Notion image: " + ex.Message);
+            }
+
             try
             {
                 //wait a few seconds in case application instance is just shutting down..
@@ -373,6 +519,11 @@ namespace Lively
 
         public static void ShutDown()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ResetColor();
+            CancelTokenSource.Cancel();
+            CancelTokenSource.Dispose();
+
             try
             {
                 ((ServiceProvider)App.Services)?.Dispose();

@@ -61,6 +61,8 @@ namespace Lively.Common.Services
 
         public async Task<AppUpdateStatus> CheckUpdate(int fetchDelay = 45 * 1000)
         {
+            Console.WriteLine("Checkign for update, returning no update");
+            return AppUpdateStatus.uptodate;
             if (Constants.ApplicationType.IsMSIX)
             {
                 //msix already has built-in updater.

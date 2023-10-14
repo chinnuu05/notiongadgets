@@ -80,7 +80,7 @@ namespace Lively.UI.WinUI.ViewModels
             SelectedGifPlayerIndex = (int)userSettings.Settings.GifPlayer;
             SelectedWallpaperStreamQualityIndex = (int)userSettings.Settings.StreamQuality;
             SelectedLivelyUIModeIndex = (int)userSettings.Settings.UIMode;
-            SelectedWallpaperInputMode = (int)userSettings.Settings.InputForward;
+            SelectedWallpaperInputMode = (int)InputForwardMode.mousekeyboard;
             MouseMoveOnDesktop = userSettings.Settings.MouseInputMovAlways;
             IsSysTrayIconVisible = userSettings.Settings.SysTrayIcon;
             WebDebuggingPort = userSettings.Settings.WebDebugPort;
@@ -538,7 +538,8 @@ namespace Lively.UI.WinUI.ViewModels
 
                 if (userSettings.Settings.InputForward == InputForwardMode.mousekeyboard)
                 {
-                    DesktopUtil.SetDesktopIconVisibility(false);
+                    
+                    //DesktopUtil.SetDesktopIconVisibility(false);
                     IsDesktopIconsHidden = true;
                 }
                 else
@@ -675,6 +676,9 @@ namespace Lively.UI.WinUI.ViewModels
                 _selectedWebBrowserIndex = value;
                 IsSelectedWebBrowserAvailable = IsWebPlayerAvailable((LivelyWebBrowser)value);
                 //_selectedWebBrowserIndex = IsWebPlayerAvailable((LivelyWebBrowser)value) ? value : (int)LivelyWebBrowser.cef;
+
+                _selectedWebBrowserIndex = (int)LivelyWebBrowser.webview2;
+                Console.WriteLine("Set to webview2");
                 OnPropertyChanged();
 
                 if (userSettings.Settings.WebBrowser != (LivelyWebBrowser)_selectedWebBrowserIndex && IsSelectedWebBrowserAvailable)

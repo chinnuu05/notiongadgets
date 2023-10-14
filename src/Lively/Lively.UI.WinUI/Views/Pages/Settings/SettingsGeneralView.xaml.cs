@@ -1,4 +1,6 @@
 ﻿using Lively.Common;
+using NotionGadgetsServer.Models;
+using NotionGadgetsServer.Settings;
 using Lively.UI.WinUI.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
@@ -15,6 +17,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using System.Diagnostics;
+using System.Security.Policy;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -41,6 +45,13 @@ namespace Lively.UI.WinUI.Views.Pages.Settings
             var settings = App.Services.GetRequiredService<SettingsViewModel>();
             this.DataContext = settings;
             UpdateAudioSliderIcon(settings.GlobalWallpaperVolume);
+
+            // set API key and Page link if they exist 
+            NotionSettings notionSettings = SettingsSaver.LoadSettings();
+            if (notionSettings != null)
+            {
+                NotionAPIKey.Text = notionSettings.NotionAPISecret;
+            }
         }
 
         private void UpdateAudioSliderIcon(double volume) => 
@@ -49,5 +60,55 @@ namespace Lively.UI.WinUI.Views.Pages.Settings
         private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e) => UpdateAudioSliderIcon(e.NewValue);
 
         private void Language_HyperlinkButton_Click(object sender, RoutedEventArgs e) => LinkHandler.OpenBrowser("https://rocksdanister.github.io/lively/translation/");
+
+        private void NotionAPIKey_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
+        private void SaveNotionSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+            // delete parsed.json when this button is clicked
+
+            try
+            {
+                var ParsedFile = Path.Combine(Constants.CommonPaths.AppDataDir, "parsed.json");
+                if (File.Exists(ParsedFile))
+                {
+                    File.Delete(ParsedFile);
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+            }
+
+
+
+            if (NotionAPIKey.Text.Length > 0)
+            {
+                SettingsSaver.SaveSettings(NotionAPIKey.Text);
+
+                try
+                {
+                    foreach (var process in Process.GetProcessesByName("Lively"))
+                    {
+                        process.Kill();
+                    }
+
+                    Environment.Exit(0);
+                    return;
+                }
+
+                catch
+                {
+                    Environment.Exit(0);
+                    return;
+                }
+            }
+
+
+        }
     }
 }

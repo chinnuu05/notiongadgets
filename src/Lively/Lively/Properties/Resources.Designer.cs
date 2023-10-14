@@ -106,6 +106,24 @@ namespace Lively.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create a dynamic wallpaper.
+        /// </summary>
+        public static string AddWallpaperAdvanced_Description {
+            get {
+                return ResourceManager.GetString("AddWallpaperAdvanced.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string AddWallpaperAdvanced_Header {
+            get {
+                return ResourceManager.GetString("AddWallpaperAdvanced.Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add wallpaper.
         /// </summary>
         public static string AddWallpaperDrop_Text {
@@ -481,7 +499,7 @@ namespace Lively.Properties {
         ///
         ///For OLED, Plasma or CRT displays which are susceptibe to burn-in it is advised to use wallpaper with regular motion and an overall dark theme which is supposed to mitigate burn-in but this feature is untested and its effectiveness cannot be guaranteed.
         ///
-        ///The main purpose of Lively&apos;s screensavers is to add another layer of customization to your pc, use screensavers as burn-in protecti [rest of string was truncated]&quot;;.
+        ///The main purpose of Lively&apos;s screensavers is to add another layer of customization to your pc, use screensavers as burn-in protection a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DescOledScreensaverNotice {
             get {
@@ -540,6 +558,42 @@ namespace Lively.Properties {
         public static string DescriptionDeleteConfirmationLibrary {
             get {
                 return ResourceManager.GetString("DescriptionDeleteConfirmationLibrary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Approximating depth...
+        /// </summary>
+        public static string DescriptionDepthApprox_Content {
+            get {
+                return ResourceManager.GetString("DescriptionDepthApprox.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using AI transform photographs into 3D.
+        /// </summary>
+        public static string DescriptionDepthWallpaperItem_Content {
+            get {
+                return ResourceManager.GetString("DescriptionDepthWallpaperItem.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AI generated depth wallpaper.
+        /// </summary>
+        public static string DescriptionDepthWallpaperTemplate_Content {
+            get {
+                return ResourceManager.GetString("DescriptionDepthWallpaperTemplate.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional files need to be downloaded for this feature.
+        /// </summary>
+        public static string DescriptionDownloadRequired_Text {
+            get {
+                return ResourceManager.GetString("DescriptionDownloadRequired.Text", resourceCulture);
             }
         }
         
@@ -1160,7 +1214,7 @@ namespace Lively.Properties {
         ///
         ///If Windows 7 just set - Adjust for best appearance &amp;amp; Apply.
         ///If still not working, close &amp; start Lively again/restart windows.
-        ///(Do [rest of string was truncated]&quot;;.
+        ///(Does not w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LivelyExceptionWorkerWSetupFail {
             get {
@@ -1417,6 +1471,15 @@ namespace Lively.Properties {
         public static string RestoreWallpaper_Text {
             get {
                 return ResourceManager.GetString("RestoreWallpaper.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some functionalities may not be available when run as administrator.
+        /// </summary>
+        public static string RunningAsAdminWarning_Message {
+            get {
+                return ResourceManager.GetString("RunningAsAdminWarning.Message", resourceCulture);
             }
         }
         
@@ -1777,6 +1840,15 @@ namespace Lively.Properties {
         public static string TextConfirmCancel_Text {
             get {
                 return ResourceManager.GetString("TextConfirmCancel.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        public static string TextContinue_Content {
+            get {
+                return ResourceManager.GetString("TextContinue.Content", resourceCulture);
             }
         }
         
@@ -2186,15 +2258,6 @@ namespace Lively.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
-        /// </summary>
-        public static string TextSearch {
-            get {
-                return ResourceManager.GetString("TextSearch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Select all.
         /// </summary>
         public static string TextSelectAll_Content {
@@ -2564,6 +2627,24 @@ namespace Lively.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Wallpaper.
+        /// </summary>
+        public static string TitleCreateWallpaper_Content {
+            get {
+                return ResourceManager.GetString("TitleCreateWallpaper.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create a simple wallpaper.
+        /// </summary>
+        public static string TitleCreateWallpaperOpenItem_Description {
+            get {
+                return ResourceManager.GetString("TitleCreateWallpaperOpenItem.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Deletion.
         /// </summary>
         public static string TitleDeleteConfirmation {
@@ -2573,11 +2654,47 @@ namespace Lively.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AI Depth Wallpaper.
+        /// </summary>
+        public static string TitleDepthWallpaper_Content {
+            get {
+                return ResourceManager.GetString("TitleDepthWallpaper.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Depth Wallpaper.
+        /// </summary>
+        public static string TitleDepthWallpaperItem_Content {
+            get {
+                return ResourceManager.GetString("TitleDepthWallpaperItem.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string TitleDownload_Content {
+            get {
+                return ResourceManager.GetString("TitleDownload.Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download in Progress.
         /// </summary>
         public static string TitleDownloadProgress_Text {
             get {
                 return ResourceManager.GetString("TitleDownloadProgress.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Required.
+        /// </summary>
+        public static string TitleDownloadRequired_Text {
+            get {
+                return ResourceManager.GetString("TitleDownloadRequired.Text", resourceCulture);
             }
         }
         

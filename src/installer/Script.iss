@@ -9,10 +9,7 @@
 
 [CustomMessages]
 english.DeleteEverythigMsgBox=Do you want to delete data folder?
-russian.DeleteEverythigMsgBox=Вы хотите удалить папку данных?
-spanish.DeleteEverythigMsgBox=¿Desea eliminar la carpeta de datos?
-chinese.DeleteEverythigMsgBox=您要删除数据文件夹吗？
-korean.DeleteEverythigMsgBox=데이터 폴더를 삭제하시겠습니까?
+
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -51,36 +48,7 @@ UninstallDisplayIcon={app}\{#MyAppExeName}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"; LicenseFile: "License\License.txt";
-Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl";
-Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl";
-Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl";
-Name: "bulgarian"; MessagesFile: "compiler:Languages\Bulgarian.isl";
-Name: "catalan"; MessagesFile: "compiler:Languages\Catalan.isl";
-Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl";
-Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl";
-Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl";
-Name: "french"; MessagesFile: "compiler:Languages\French.isl";
-Name: "german"; MessagesFile: "compiler:Languages\German.isl";
-Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl";
-Name: "hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl";
-Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl";
-Name: "norwegian"; MessagesFile: "compiler:Languages\Norwegian.isl";
-Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl";
-Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl";
-Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl";
-Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl";
-Name: "portuguese"; MessagesFile: "compiler:Languages\Portuguese.isl";
-Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl";
-Name: "chinese"; MessagesFile: "Languages\ChineseSimplified.isl";
-Name: "traditionalchinese"; MessagesFile: "Languages\ChineseTraditional.isl";
-Name: "arabic"; MessagesFile: "Languages\Arabic.isl";
-Name: "vietnamese"; MessagesFile: "Languages\Vietnamese.isl";
-Name: "greek"; MessagesFile: "Languages\Greek.isl";
-Name: "indonesian"; MessagesFile: "Languages\Indonesian.isl";
-Name: "korean"; MessagesFile: "Languages\Korean.isl";
-Name: "swedish"; MessagesFile: "Languages\Swedish.isl";
-Name: "serbiancyrillic"; MessagesFile: "Languages\SerbianCyrillic.isl";
-Name: "serbianlatin"; MessagesFile: "Languages\SerbianLatin.isl";
+
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; 
@@ -95,6 +63,7 @@ Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: 
 
 [Files]
 Source: "VC\VC_redist.x86.exe"; DestDir: {tmp}; Flags: deleteafterinstall
+Source: "evergreen\MicrosoftEdgeWebview2Setup.exe"; DestDir: {tmp};
 ; https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/deploy-unpackaged-apps
 ;Source: "WindowsAppRuntime\WindowsAppRuntimeInstall_x86.exe"; DestDir: {tmp}; Flags: deleteafterinstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -102,6 +71,35 @@ Source: "Release\Lively.exe"; DestDir: "{app}"; Flags: ignoreversion;
 Source: "Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs;
 Source: "dotnetcore\windowsdesktop-runtime-7.0.7-win-x86.exe"; DestDir: {tmp}; Flags: deleteafterinstall
 Source: "dotnetcore\netcorecheck.exe"; DestDir: {tmp}; Flags: deleteafterinstall
+Source: "Release\Library\wallpapers\NotionGadgetsClient\index.html"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\css\style.css"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\css\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\css\themes.css"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\css\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\css\bootstrap\bootstrap.min.css"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\css\bootstrap\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\jquery\jquery-min.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\jquery\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\jquery-ui.min.css"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\jquery-ui.min.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\main.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\water.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\loadsettings.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\savesettings.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\themeloader.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\js\bootstrap\bootstrap.min.js"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\js\bootstrap\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\images\line.svg"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\images\line.svg"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_444444_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_555555_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_777620_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_777777_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_cc0000_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\jqueryui\images\ui-icons_ffffff_256x240.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\jqueryui\images"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+
+Source: "Release\Library\wallpapers\NotionGadgetsClient\textures\notion-default.jpg"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\textures"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+
+;Source: "Release\Library\wallpapers\NotionGadgetsClient\textures\cherry-video.mp4"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\textures\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\LivelyInfo.json"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\LivelyProperties.json"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+Source: "Release\Library\wallpapers\NotionGadgetsClient\gadgets-banner.png"; DestDir: "{localappdata}\Lively Wallpaper\Library\wallpapers\NotionGadgetsClient\"; Flags: ignoreversion createallsubdirs recursesubdirs comparetimestamp     
+
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -113,6 +111,7 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 Filename: "{tmp}\VC_redist.x86.exe"; Parameters: /install /quiet /norestart; Check: VCRedistNeedsInstall; StatusMsg: Installing Visual C++ Redistributable...
 ;Filename: "{tmp}\WindowsAppRuntimeInstall_x86.exe"; Parameters: --quiet; Check: DependencyInstall; Flags: runhidden; StatusMsg: Installing Windows App SDK...
 Filename: "{tmp}\windowsdesktop-runtime-7.0.7-win-x86.exe"; Parameters: /install /quiet /norestart; Check: NetCoreNeedsInstall('7.0.7');  StatusMsg: Installing .Net Core 7.0.7...
+Filename: "{tmp}\MicrosoftEdgeWebview2Setup.exe"; Parameters: /silent /install; StatusMsg: Installing Evergreen Bootstrapper...
 
 [Code]
 var
@@ -172,6 +171,60 @@ begin
   end;
 end;
 
+// copy all folders and files
+(*
+procedure DirectoryCopy(SourcePath, DestPath: string);
+var
+  FindRec: TFindRec;
+  SourceFilePath: string;
+  DestFilePath: string;
+begin
+  if FindFirst(SourcePath + '\*', FindRec) then
+  begin
+    try
+      repeat
+        if (FindRec.Name <> '.') and (FindRec.Name <> '..') then
+        begin
+          SourceFilePath := SourcePath + '\' + FindRec.Name;
+          DestFilePath := DestPath + '\' + FindRec.Name;
+          if FindRec.Attributes and FILE_ATTRIBUTE_DIRECTORY = 0 then
+          begin
+            if FileCopy(SourceFilePath, DestFilePath, False) then
+            begin
+              Log(Format('Copied %s to %s', [SourceFilePath, DestFilePath]));
+            end
+              else
+            begin
+              Log(Format('Failed to copy %s to %s', [
+                SourceFilePath, DestFilePath]));
+            end;
+          end
+            else
+          begin
+            if DirExists(DestFilePath) or CreateDir(DestFilePath) then
+            begin
+              Log(Format('Created %s', [DestFilePath]));
+              DirectoryCopy(SourceFilePath, DestFilePath);
+            end
+              else
+            begin
+              Log(Format('Failed to create %s', [DestFilePath]));
+            end;
+          end;
+        end;
+      until not FindNext(FindRec);
+    finally
+      FindClose(FindRec);
+    end;
+  end
+    else
+  begin
+    Log(Format('Failed to list %s', [SourcePath]));
+  end;
+end;
+
+function InstallNotionGadgets():
+*)
 //Uninstall previous install: https://stackoverflow.com/questions/2000296/inno-setup-how-to-automatically-uninstall-previous-installed-version
 //note: Inno does not delete files, it just overwrites & keeps the old ones if they have different name..it can get accumulated when program structure change!
 function GetUninstallString(): String;
@@ -228,6 +281,10 @@ end;
 
 /////////////////////////////////////////////////////////////////////
 procedure CurStepChanged(CurStep: TSetupStep);
+var
+  strContent: String;
+  intErrorCode: Integer;
+  strSelf_Delete_BAT: String;
 begin
   if (CurStep=ssInstall) then
   begin
@@ -291,3 +348,5 @@ function AutoLaunch(): Boolean;
 begin
  Result := CmdLineParamNotExists('/NOAUTOLAUNCH');
 end;
+
+

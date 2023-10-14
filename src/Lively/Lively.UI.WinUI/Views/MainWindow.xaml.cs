@@ -187,6 +187,7 @@ namespace Lively.UI.WinUI
         {
             if (e.UpdateStatus == AppUpdateStatus.available)
             {
+                Console.WriteLine("Update available");
                 _ = this.DispatcherQueue.TryEnqueue(() =>
                 {
                     infoBar.IsOpen = true;
@@ -204,6 +205,11 @@ namespace Lively.UI.WinUI
                     infoBar.Message = $"{i18n.GetString("DescriptionUpdateAvailable")} (v{e.UpdateVersion})";
                     infoBar.Severity = InfoBarSeverity.Success;
                 });
+            }
+
+            else
+            {
+                Console.WriteLine("No update available");
             }
         }
 

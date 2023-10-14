@@ -12,6 +12,20 @@
     <Grid>
         <ScrollViewer>
             <StackPanel Margin="10,5,10,5">
+
+                <controls:SettingsGroup Header="Notion Settings">
+                    <controls:SettingsCard ContentAlignment="Right" Header="Notion API Key">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xEC7A;" />
+                        </controls:SettingsCard.HeaderIcon>
+                        <TextBox TextChanged="NotionAPIKey_TextChanged" Width="300px" PlaceholderText="Paste your Notion API key" Name="NotionAPIKey"></TextBox>
+                    </controls:SettingsCard>
+
+                    <Button HorizontalContentAlignment="Center" Width="150px" Height="45px" Margin="0,10,0,0" Click="SaveNotionSettings_Click" Name="SaveNotionSettings">Apply and Restart</Button>
+
+                </controls:SettingsGroup>
+                
+                
                 <controls:SettingsGroup x:Uid="AppearanceBehaviour">
                     <controls:SettingsCard x:Uid="Startup">
                         <controls:SettingsCard.HeaderIcon>
