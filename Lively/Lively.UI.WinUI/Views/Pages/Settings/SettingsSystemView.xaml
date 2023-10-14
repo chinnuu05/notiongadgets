@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="Lively.UI.WinUI.Views.Pages.Settings.SettingsSystemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:WinUICommunity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Lively.UI.WinUI.Views.Pages.Settings"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Margin="10,5,10,5">
+                <controls:SettingsGroup x:Uid="AppearanceBehaviour">
+                    <controls:SettingsCard x:Uid="TaskbarTheme">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE771;" />
+                        </controls:SettingsCard.HeaderIcon>
+                        <ComboBox MinWidth="{StaticResource SettingActionControlMinWidth}" SelectedIndex="{Binding SelectedTaskbarThemeIndex, Mode=TwoWay}">
+                            <ComboBoxItem x:Uid="TextOff" />
+                            <ComboBoxItem x:Uid="TaskbarThemeClear" />
+                            <ComboBoxItem x:Uid="TaskbarThemeBlur" />
+                            <ComboBoxItem x:Uid="TaskbarThemeFluent" />
+                            <ComboBoxItem x:Uid="TaskbarThemeColor" Visibility="Collapsed" />
+                            <ComboBoxItem x:Uid="TaskbarThemeWallpaper" />
+                            <ComboBoxItem x:Uid="TaskbarThemeWallpaperFluent" />
+                        </ComboBox>
+                    </controls:SettingsCard>
+                    <InfoBar
+                        x:Uid="DevelopmentOnHold"
+                        Margin="0,-2.5,0,0"
+                        VerticalAlignment="Top"
+                        IsClosable="False"
+                        IsOpen="True"
+                        Severity="Error">
+                        <InfoBar.ActionButton>
+                            <HyperlinkButton NavigateUri="https://github.com/rocksdanister/lively/issues/1569" ToolTipService.ToolTip="https://github.com/rocksdanister/lively/issues/1569">
+                                <HyperlinkButton.Content>
+                                    <TextBlock x:Uid="TextLearnMore" TextWrapping="Wrap" />
+                                </HyperlinkButton.Content>
+                            </HyperlinkButton>
+                        </InfoBar.ActionButton>
+                    </InfoBar>
+                </controls:SettingsGroup>
+
+                <!--  depreciated  -->
+                <!--<controls:SettingsExpander
+                    Description="After the selected inactivity period use the current wallpaper as your screensaver."
+                    Header="Screensaver"
+                    IsExpanded="True"
+                    Visibility="Visible">
+                    <controls:SettingsExpander.HeaderIcon>
+                        <FontIcon Glyph="&#xEC77;" />
+                    </controls:SettingsExpander.HeaderIcon>
+                    <ComboBox MinWidth="{StaticResource SettingActionControlMinWidth}" SelectedIndex="{Binding SelectedScreensaverWaitIndex, Mode=TwoWay}">
+                        <ComboBoxItem Content="Off" />
+                        <ComboBoxItem Content="1" />
+                        <ComboBoxItem Content="2" />
+                        <ComboBoxItem Content="3" />
+                        <ComboBoxItem Content="5" />
+                        <ComboBoxItem Content="10" />
+                        <ComboBoxItem Content="15" />
+                        <ComboBoxItem Content="20" />
+                        <ComboBoxItem Content="25" />
+                        <ComboBoxItem Content="30" />
+                        <ComboBoxItem Content="45" />
+                        <ComboBoxItem Content="60" />
+                        <ComboBoxItem Content="120" />
+                    </ComboBox>
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="On resume, display logon screen" IsChecked="{Binding IsScreensaverLockOnResume, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>-->
+
+                <controls:SettingsGroup x:Uid="DeveloperGroup">
+                    <controls:SettingsCard x:Uid="Debug">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xEC7A;" />
+                        </controls:SettingsCard.HeaderIcon>
+                        <Button
+                            x:Uid="TextOpen"
+                            MinWidth="150"
+                            Command="{Binding ShowDebugCommand}" />
+                    </controls:SettingsCard>
+
+                    <controls:SettingsCard x:Uid="ExportLogs">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE9F9;" />
+                        </controls:SettingsCard.HeaderIcon>
+                        <Button
+                            x:Uid="TextSave"
+                            MinWidth="150"
+                            Command="{Binding ExtractLogCommand}" />
+                    </controls:SettingsCard>
+                </controls:SettingsGroup>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
