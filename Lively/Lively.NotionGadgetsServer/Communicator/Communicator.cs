@@ -18,7 +18,6 @@ namespace Lively.NotionGadgetsServer.Communicator
     // communicates with Notion API
     public class APICommunicator
     {
-        private string APISecret = "secret_NmFirTNPqTI15HsBmCfMCEU0rAIZ0uJifHgxG5OFj7J";
         private readonly NotionClient NotionClient;
 
         /* Toggle IDs */
